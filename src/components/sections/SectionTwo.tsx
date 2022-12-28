@@ -1,7 +1,8 @@
+import SectionLayout from 'components/layouts/SectionLayout';
 import { FC } from 'react';
 
-const SectionTRwo: FC<any> = () => {
-	return <div>SectionTRwo</div>;
+const SectionTwo: FC<any> = () => {
+	return <SectionLayout id="section2">SectionTwo</SectionLayout>;
 };
 
-export default SectionTRwo;
+export default SectionTwo;
