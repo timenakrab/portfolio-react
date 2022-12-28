@@ -24,21 +24,21 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-		"start": "react-scripts start",
-		"build": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=production react-scripts build",
-		"build:local": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=local react-scripts build",
-		"build:dev": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=development react-scripts build",
-		"build:qa": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=qa react-scripts build",
-		"build:prod": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=production react-scripts build",
-		"test": "./node_modules/.bin/jest",
-		"eject": "react-scripts eject",
-		"lint": "eslint .",
-		"lint:fix": "eslint --fix --ext .ts,.tsx src/",
-		"prettier": "prettier --write \"**/*.+(ts|tsx|json|scss|md)\"",
-		"format": "npm run prettier",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook"
-	},
+    "start": "react-scripts start",
+    "build": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=production react-scripts build",
+    "build:local": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=local react-scripts build",
+    "build:dev": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=development react-scripts build",
+    "build:qa": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=qa react-scripts build",
+    "build:prod": "REACT_APP_MAINTENANCE=false REACT_APP_NODE_ENVIRONMENT=production react-scripts build",
+    "test": "./node_modules/.bin/jest",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx src/",
+    "prettier": "prettier --write \"**/*.+(ts|tsx|json|scss|md)\"",
+    "format": "npm run prettier",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/eslint-parser": "^7.19.1",
@@ -57,39 +57,38 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "serve": "^14.1.2",
     "style-loader": "^3.3.1"
   },
   "eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"lint-staged": {
-		"**/*.{ts,tsx}": [
-			"npm run format",
-			"npm run lint:fix"
-		]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	}
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
 }
