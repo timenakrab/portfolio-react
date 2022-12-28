@@ -1,20 +1,10 @@
 {
-	"parser": "@babel/eslint-parser",
+	"parser": "babel-eslint",
 	"parserOptions": {
 		"sourceType": "module",
 		"allowImportExportEverywhere": false,
 		"codeFrame": false,
-		"ecmaVersion": 2020,
-		"requireConfigFile": false,
-		"babelOptions": {
-      "babelrc": true,
-      "configFile": false,
-      "presets": [
-					"@babel/preset-react",
-					"@babel/preset-env",
-					"@babel/preset-typescript"
-			]
-		}
+		"ecmaVersion": 2020
 	},
 	"extends": [
 		"prettier",
