@@ -1,6 +1,6 @@
 import { SectionLayout } from 'components/layouts';
 import { FC } from 'react';
-import { NameKeyboard } from './components';
+import { TextKeyboard } from './components';
 import Container from './components/Container';
 
 const Introduce: FC<any> = () => {
@@ -11,9 +11,9 @@ const Introduce: FC<any> = () => {
 					<div style={{ height: 'fit-content' }}>
 						<h1>watchara h.</h1>
 					</div>
-					<div style={{ height: 52 }}>
-						<NameKeyboard
-							text="frontend developer"
+					<div>
+						<TextKeyboard
+							texts={['frontend developer', 'web developer.']}
 							tranfrom="uppercase"
 							durationIn={150}
 							durationOut={50}

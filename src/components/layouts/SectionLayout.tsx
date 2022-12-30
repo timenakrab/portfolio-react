@@ -4,9 +4,8 @@ interface ISectionLayout {
 	bgColor?: string | '#ffffff';
 	bgImage?: string | '';
 }
-const SectionLayout = styled.div<ISectionLayout>`
+const SectionLayout = styled.section<ISectionLayout>`
 	display: flex;
-	width: 100vw;
 	min-height: 100vh;
 	overflow: hidden;
 	box-sizing: border-box;

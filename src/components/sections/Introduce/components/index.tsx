@@ -1,1 +1,1 @@
-export { default as NameKeyboard } from './NameKeyboard';
+export { default as TextKeyboard } from './TextKeyboard';

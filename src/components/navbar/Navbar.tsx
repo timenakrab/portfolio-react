@@ -1,18 +1,25 @@
 import colors from 'constant/colors';
-import { FC, useCallback, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Logo from './components/NavbarLogo';
 import NavbarMenu from './components/NavbarMenu';
 import NavbarWrapper from './components/NavbarWarpper';
 
+const menus = [
+	{ name: 'home', hash: '#section-introduce' },
+	{ name: 'section2', hash: '#section2' },
+	{ name: 'section3', hash: '#section3' },
+];
+
 const Navbar: FC = () => {
-	const navigate = useNavigate();
+	const [hashSelected, setHashSelected] = useState('');
+	const history = useHistory();
 	const init = useRef(false);
 
 	const changeSection = (sectionId: string) => {
 		const section = document.querySelector(sectionId);
 		if (section) {
-			navigate(`/${sectionId}`);
+			history.replace(`/${sectionId}`);
 			section.scrollIntoView({ behavior: 'smooth' });
 		}
 	};
@@ -26,13 +33,45 @@ const Navbar: FC = () => {
 		}
 	}, []);
 
+	const checkSection = useCallback(() => {
+		const section1 = document.getElementById('section-introduce');
+		const section2 = document.getElementById('section2');
+		const section3 = document.getElementById('section3');
+
+		const sec1Start = section1?.offsetTop ?? 0;
+		const sec1End = section1?.clientHeight ?? 0;
+		const sec2Start = section2?.offsetTop ?? 0;
+		const sec2End = sec1End + (section2?.clientHeight ?? 0);
+
+		if (section1 && window.scrollY >= sec1Start && window.scrollY < sec1End) {
+			const id = section1?.getAttribute('id');
+			history.replace(`/#${id}`);
+			setHashSelected(`#${id}`);
+		} else if (section2 && window.scrollY >= sec2Start && window.scrollY < sec2End) {
+			const id = section2?.getAttribute('id');
+			history.replace(`/#${id}`);
+			setHashSelected(`#${id}`);
+		} else {
+			const id = section3?.getAttribute('id');
+			history.replace(`/#${id}`);
+			setHashSelected(`#${id}`);
+		}
+	}, [history]);
+
 	useEffect(() => {
 		if (!init.current) {
 			init.current = true;
 			checkActive();
-			window.addEventListener('scroll', checkActive);
+			window.addEventListener('scroll', () => {
+				checkActive();
+				checkSection();
+			});
 		}
-	}, [checkActive]);
+	}, [checkActive, checkSection]);
+
+	useEffect(() => {
+		setHashSelected(history.location.hash || menus[0].hash);
+	}, [history]);
 
 	return (
 		<NavbarWrapper defaultColor={colors.transparent} activeColor={colors.black}>
@@ -40,9 +79,15 @@ const Navbar: FC = () => {
 				<Logo src="/images/beard.svg" alt="logo" />
 			</div>
 			<div>
-				<NavbarMenu onClick={() => changeSection('#section-introduce')}>Home</NavbarMenu>
-				<NavbarMenu onClick={() => changeSection('#section2')}>Section 2</NavbarMenu>
-				<NavbarMenu onClick={() => changeSection('#section3')}>Section 3</NavbarMenu>
+				{menus.map((menu, idx) => (
+					<NavbarMenu
+						className={hashSelected === menu.hash ? 'active' : ''}
+						key={`menu_${idx}`}
+						onClick={() => changeSection(menu.hash)}
+					>
+						{menu.name}
+					</NavbarMenu>
+				))}
 			</div>
 		</NavbarWrapper>
 	);
