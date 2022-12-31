@@ -11,6 +11,7 @@ const Alphabet = styled.span<IAlphabet>`
 
 	:last-child::after {
 		content: '|';
+		margin-left: 4px;
 	}
 
 	@media only screen and (max-width: 768px) {

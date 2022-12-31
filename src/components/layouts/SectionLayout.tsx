@@ -13,7 +13,7 @@ const SectionLayout = styled.section<ISectionLayout>`
 	${({ bgImage }) => (bgImage ? `background-image: url(${bgImage})` : null)};
 	${({ bgImage }) => (bgImage ? 'background-size: cover' : null)};
 	${({ bgImage }) => (bgImage ? 'background-repeat: no-repeat' : null)};
-	${({ bgImage }) => (bgImage ? 'background-attachment: fixed' : null)};
+	${({ bgImage }) => (bgImage ? 'background-attachment: unset' : null)};
 	${({ bgImage }) => (bgImage ? 'background-position: center' : null)};
 
 	@media only screen and (max-width: 768px) {

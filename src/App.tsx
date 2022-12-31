@@ -1,5 +1,5 @@
 import Navbar from 'components/navbar';
-import { Introduce, SectionThree, SectionTwo } from 'components/sections';
+import { Introduce, SectionThree, AboutMe } from 'components/sections';
 import { Main } from 'components/layouts';
 import { Fragment } from 'react';
 
@@ -9,7 +9,7 @@ const App = () => {
 			<Navbar />
 			<Main>
 				<Introduce />
-				<SectionTwo />
+				<AboutMe />
 				<SectionThree />
 			</Main>
 		</Fragment>
