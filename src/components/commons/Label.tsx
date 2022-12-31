@@ -10,7 +10,6 @@ const Label = styled.label`
 	font-size: 12px;
 	color: ${colors.darkBlue};
 	letter-spacing: 0;
-	margin-bottom: 8px;
 `;
 
 export default Label;

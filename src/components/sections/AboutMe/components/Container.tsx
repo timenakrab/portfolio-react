@@ -1,4 +1,3 @@
-// import colors from 'constant/colors';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -27,16 +26,14 @@ const Container = styled.div`
 		padding-left: 32px;
 		padding-right: 64px;
 		text-align: left;
-		& h3 {
-			font-size: 26px;
-			line-height: 40px;
-			margin: 0;
-			margin-bottom: 8px;
-		}
 		& p {
+			display: flex;
+			align-items: center;
 			font-size: 18px;
 			line-height: 26px;
-			margin: 0;
+		}
+		& .download {
+			text-align: left;
 		}
 	}
 
@@ -51,16 +48,9 @@ const Container = styled.div`
 		& .right {
 			padding-left: 12px;
 			padding-right: 24px;
-			& h3 {
-				font-size: 24px;
-				line-height: 36px;
-				margin: 0;
-				margin-bottom: 8px;
-			}
 			& p {
 				font-size: 16px;
 				line-height: 24px;
-				margin: 0;
 			}
 		}
 	}
@@ -79,6 +69,9 @@ const Container = styled.div`
 			width: 100%;
 			padding-left: 24px;
 			padding-right: 24px;
+			& .download {
+				text-align: center;
+			}
 		}
 	}
 `;
