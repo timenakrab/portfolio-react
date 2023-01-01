@@ -13,8 +13,8 @@ const TextKeyboard: FC<ITextKeyboard> = ({
 	durationIn = 300,
 	durationOut = 150,
 }) => {
+	const [init, setInit] = useState(false);
 	const [renderText, setRenderText] = useState<string>('');
-	const init = useRef<boolean>(false);
 	const isFirstRender = useRef<boolean>(true);
 	const order = useRef<number>(1);
 	const textOrder = useRef<number>(0);
@@ -44,13 +44,13 @@ const TextKeyboard: FC<ITextKeyboard> = ({
 	}, [durationOut, texts]);
 
 	useEffect(() => {
-		if (!init.current) {
-			init.current = true;
-		} else if (init.current && renderText === texts[textOrder.current]) {
+		if (!init) {
+			setInit(true);
+		} else if (init && renderText === texts[textOrder.current]) {
 			setTimeout(() => {
 				deleteAlphabet();
 			}, 1000);
-		} else if (init.current && renderText === '') {
+		} else if (init && renderText === '') {
 			let txtOrder = textOrder.current + 1;
 			if (isFirstRender.current || textOrder.current === texts.length - 1) {
 				txtOrder = 0;
@@ -59,7 +59,7 @@ const TextKeyboard: FC<ITextKeyboard> = ({
 			textOrder.current = txtOrder;
 			showAlphabet();
 		}
-	}, [deleteAlphabet, renderText, showAlphabet, texts]);
+	}, [deleteAlphabet, init, renderText, showAlphabet, texts]);
 
 	return (
 		<div>
