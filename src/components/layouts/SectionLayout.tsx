@@ -3,9 +3,11 @@ import styled from 'styled-components';
 interface ISectionLayout {
 	bgColor?: string | '#ffffff';
 	bgImage?: string | '';
+	flexDirection?: 'row' | 'column';
 }
 const SectionLayout = styled.section<ISectionLayout>`
 	display: flex;
+	flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
 	min-height: 100vh;
 	overflow: hidden;
 	box-sizing: border-box;

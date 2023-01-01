@@ -12,7 +12,17 @@ code {
 
 * {
 	font-family: 'Mitr', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+		'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+.text-align-left {
+	text-align: left;
+}
+.text-align-center {
+	text-align: center;
+}
+.text-align-right {
+	text-align: right;
 }
 
 .mt-0 {
@@ -77,4 +87,9 @@ code {
 }
 .ml-4 {
 	margin-left: 32px;
+}
+
+.tag-work {
+	background-color: rgba(0, 0, 0, 0.05) !important;
+	color: #478ba2 !important;
 }

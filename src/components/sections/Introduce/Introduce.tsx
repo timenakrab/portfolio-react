@@ -1,7 +1,6 @@
 import { SectionLayout } from 'components/layouts';
 import { FC } from 'react';
-import { TextKeyboard } from './components';
-import Container from './components/Container';
+import { TextKeyboard, Container } from './components';
 
 const Introduce: FC<any> = () => {
 	return (

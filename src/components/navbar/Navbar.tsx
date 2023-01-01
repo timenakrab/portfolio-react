@@ -8,7 +8,7 @@ import NavbarWrapper from './components/NavbarWarpper';
 const menus = [
 	{ name: 'home', hash: '#section-introduce' },
 	{ name: 'about', hash: '#aboutme' },
-	{ name: 'section3', hash: '#section3' },
+	{ name: 'timeline', hash: '#timeline' },
 ];
 
 const Navbar: FC = () => {
@@ -36,7 +36,7 @@ const Navbar: FC = () => {
 	const checkSection = useCallback(() => {
 		const section1 = document.getElementById('section-introduce');
 		const section2 = document.getElementById('aboutme');
-		const section3 = document.getElementById('section3');
+		const section3 = document.getElementById('timeline');
 
 		const sec1Start = section1?.offsetTop ?? 0;
 		const sec1End = section1?.clientHeight ?? 0;

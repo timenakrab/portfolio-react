@@ -17,7 +17,7 @@ const AboutMe: FC<any> = () => {
 					<div>
 						<Label className="mb-1">About Me</Label>
 						<p className="mt-0 mb-1">
-							I am frontend developer, and I am passionate and dedicated to my work. With 7 years
+							I am frontend developer, and I am passionate and dedicated to my work. With 6 years
 							experience as a web developer, I have acquired the skills and knowledge necessary to
 							make your project a success. I enjoy every step of the design process, from discussion
 							and collaboration.
