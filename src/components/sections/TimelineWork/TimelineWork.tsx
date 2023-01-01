@@ -69,7 +69,7 @@ const TimelineWork: FC<any> = () => {
 									<Chip className="tag-work mr-1 mb-1" label="Javascript" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="Typescript" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="NextJS" size="small" />
-									<Chip className="tag-work mr-1 mb-1" label="React Native" size="small" />
+									<Chip className="tag-work mr-1 mb-1" label="Expo" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="Redux" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="NodeJS" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="Laravel" size="small" />
