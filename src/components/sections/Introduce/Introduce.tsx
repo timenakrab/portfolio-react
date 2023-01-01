@@ -4,7 +4,7 @@ import { TextKeyboard, Container } from './components';
 
 const Introduce: FC<any> = () => {
 	return (
-		<SectionLayout id="section-introduce" bgImage="images/bgResume.webp">
+		<SectionLayout id="introduce" bgImage="images/bgResume.webp">
 			<Container>
 				<div className="content">
 					<div style={{ height: 'fit-content' }}>
