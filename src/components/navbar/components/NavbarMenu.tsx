@@ -17,10 +17,6 @@ const NavbarMenu = styled.button`
 		color: ${colors.white} !important;
 		border-bottom: 2px solid #ffffff;
 	}
-
-	&:hover {
-		color: ${colors.blue};
-	}
 `;
 
 export default NavbarMenu;

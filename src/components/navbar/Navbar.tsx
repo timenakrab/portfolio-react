@@ -19,7 +19,6 @@ const Navbar: FC = () => {
 	const changeSection = (sectionId: string) => {
 		const section = document.querySelector(sectionId);
 		if (section) {
-			history.replace(`/${sectionId}`);
 			section.scrollIntoView({ behavior: 'smooth' });
 		}
 	};
@@ -37,26 +36,23 @@ const Navbar: FC = () => {
 		const section1 = document.getElementById('introduce');
 		const section2 = document.getElementById('aboutme');
 		const section3 = document.getElementById('timeline');
+		const scrollPosition = window.scrollY + 5;
 
 		const sec1Start = section1?.offsetTop ?? 0;
 		const sec1End = section1?.clientHeight ?? 0;
 		const sec2Start = section2?.offsetTop ?? 0;
 		const sec2End = sec1End + (section2?.clientHeight ?? 0);
+		let hashId;
 
-		if (section1 && window.scrollY >= sec1Start && window.scrollY < sec1End) {
-			const id = section1?.getAttribute('id');
-			history.replace(`/#${id}`);
-			setHashSelected(`#${id}`);
-		} else if (section2 && window.scrollY >= sec2Start && window.scrollY < sec2End) {
-			const id = section2?.getAttribute('id');
-			history.replace(`/#${id}`);
-			setHashSelected(`#${id}`);
+		if (section1 && scrollPosition >= sec1Start && scrollPosition < sec1End) {
+			hashId = section1?.getAttribute('id');
+		} else if (section2 && scrollPosition >= sec2Start && scrollPosition < sec2End) {
+			hashId = section2?.getAttribute('id');
 		} else {
-			const id = section3?.getAttribute('id');
-			history.replace(`/#${id}`);
-			setHashSelected(`#${id}`);
+			hashId = section3?.getAttribute('id');
 		}
-	}, [history]);
+		setHashSelected(`#${hashId}`);
+	}, []);
 
 	useEffect(() => {
 		if (!init.current) {

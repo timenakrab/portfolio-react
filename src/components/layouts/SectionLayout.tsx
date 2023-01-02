@@ -4,11 +4,12 @@ interface ISectionLayout {
 	bgColor?: string | '#ffffff';
 	bgImage?: string | '';
 	flexDirection?: 'row' | 'column';
+	minHeight?: string;
 }
 const SectionLayout = styled.section<ISectionLayout>`
 	display: flex;
 	flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
-	min-height: 100vh;
+	min-height: ${({ minHeight }) => minHeight || '100vh'};
 	overflow: hidden;
 	box-sizing: border-box;
 	background-color: ${({ bgColor }) => bgColor};

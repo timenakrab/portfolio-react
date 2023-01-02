@@ -1,5 +1,5 @@
 import SectionLayout from 'components/layouts/SectionLayout';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -9,18 +9,37 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
 import Icon from '@mdi/react';
-import { mdiCartOutline, mdiLaptop, mdiSubmarine } from '@mdi/js';
+import { mdiAccountSchool, mdiCartOutline, mdiLaptop, mdiSubmarine } from '@mdi/js';
 import { Container } from './components';
 import { Chip } from '@mui/material';
 import colors from 'constant/colors';
+import { debounce } from 'lodash';
 
 const TimelineWork: FC<any> = () => {
+	const [isSmall, setIsSmall] = useState(false);
+	const [init, setInit] = useState(false);
+
+	const checkScreenWidth = debounce(() => {
+		setIsSmall(window.innerWidth < 768);
+	}, 100);
+
+	useEffect(() => {
+		if (!init) {
+			setInit(true);
+			checkScreenWidth();
+		} else {
+			addEventListener('resize', () => {
+				checkScreenWidth();
+			});
+		}
+	}, [checkScreenWidth, init]);
+
 	return (
 		<SectionLayout id="timeline">
 			<Container>
 				<div className="content">
-					<h1 className="mt-0 mb-2 text-align-center">Work Timeline</h1>
-					<Timeline position="alternate">
+					<h1 className="mt-0 mb-2 text-align-center">Education & Work Timeline</h1>
+					<Timeline position={isSmall ? 'right' : 'alternate'}>
 						<TimelineItem>
 							<TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
 								04-2021 to Present
@@ -103,6 +122,40 @@ const TimelineWork: FC<any> = () => {
 									<Chip className="tag-work mr-1 mb-1" label="Firebase" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="MongoDB" size="small" />
 								</div>
+							</TimelineContent>
+						</TimelineItem>
+						<TimelineItem>
+							<TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
+								06-2011 to 12-2014
+							</TimelineOppositeContent>
+							<TimelineSeparator>
+								<TimelineConnector />
+								<TimelineDot style={{ backgroundColor: '#9C7749' }}>
+									<Icon path={mdiAccountSchool} size="30px" />
+								</TimelineDot>
+							</TimelineSeparator>
+							<TimelineContent sx={{ py: '12px', px: 2 }}>
+								<Typography component="span">Burapha University</Typography>
+								<Typography variant="body2" color={colors.red}>
+									Bachelor Degree at Information Technology, Faculty of Informatics
+								</Typography>
+							</TimelineContent>
+						</TimelineItem>
+						<TimelineItem>
+							<TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
+								06-2008 to 05-2011
+							</TimelineOppositeContent>
+							<TimelineSeparator>
+								<TimelineConnector />
+								<TimelineDot style={{ backgroundColor: '#9C7749' }}>
+									<Icon path={mdiAccountSchool} size="30px" />
+								</TimelineDot>
+							</TimelineSeparator>
+							<TimelineContent sx={{ py: '12px', px: 2 }}>
+								<Typography component="span">Wichienmatu School</Typography>
+								<Typography variant="body2" color={colors.red}>
+									High School
+								</Typography>
 							</TimelineContent>
 						</TimelineItem>
 					</Timeline>

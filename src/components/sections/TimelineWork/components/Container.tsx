@@ -13,11 +13,16 @@ const Container = styled.div`
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		width: 50%;
+		align-items: center;
+		width: 75%;
 		height: 100%;
 		padding: 0px 24px;
 		box-sizing: border-box;
 		background-color: ${colors.transparent};
+
+		& ul {
+			flex-grow: 0;
+		}
 
 		@media only screen and (max-width: 768px) {
 			width: 100%;
