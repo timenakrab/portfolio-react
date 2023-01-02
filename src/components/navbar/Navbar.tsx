@@ -12,7 +12,7 @@ const menus = [
 ];
 
 const Navbar: FC = () => {
-	const [hashSelected, setHashSelected] = useState('');
+	const [hashSelected, setHashSelected] = useState(menus[0].hash);
 	const history = useHistory();
 	const init = useRef(false);
 
