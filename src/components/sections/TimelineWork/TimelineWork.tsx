@@ -63,7 +63,7 @@ const TimelineWork: FC<any> = () => {
 								<Typography variant="body2" color={colors.red}>
 									Software Engineer
 								</Typography>
-								<Typography variant="subtitle2" color="dimgrey">
+								<Typography variant="caption" color="dimgrey">
 									<ul>
 										<li>
 											Changed the company&apos;s website from CMS to ReactJS. Knowledge of planning,
@@ -118,7 +118,7 @@ const TimelineWork: FC<any> = () => {
 								<Typography variant="body2" color={colors.red}>
 									Programmer
 								</Typography>
-								<Typography variant="subtitle2" color="dimgrey">
+								<Typography variant="caption" color="dimgrey">
 									<ul>
 										<li>
 											Develop a website on basis of business needs and requirements. develop by PHP,
