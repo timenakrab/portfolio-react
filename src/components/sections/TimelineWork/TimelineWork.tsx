@@ -1,5 +1,5 @@
 import SectionLayout from 'components/layouts/SectionLayout';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -13,33 +13,14 @@ import { mdiAccountSchool, mdiCartOutline, mdiLaptop, mdiSubmarine } from '@mdi/
 import { Container } from './components';
 import { Chip } from '@mui/material';
 import colors from 'constant/colors';
-import { debounce } from 'lodash';
 
 const TimelineWork: FC<any> = () => {
-	const [isSmall, setIsSmall] = useState(false);
-	const [init, setInit] = useState(false);
-
-	const checkScreenWidth = debounce(() => {
-		setIsSmall(window.innerWidth < 768);
-	}, 100);
-
-	useEffect(() => {
-		if (!init) {
-			setInit(true);
-			checkScreenWidth();
-		} else {
-			addEventListener('resize', () => {
-				checkScreenWidth();
-			});
-		}
-	}, [checkScreenWidth, init]);
-
 	return (
 		<SectionLayout id="timeline">
 			<Container>
 				<div className="content">
 					<h1 className="mt-0 mb-2 text-align-center">Education & Work Timeline</h1>
-					<Timeline position={isSmall ? 'right' : 'alternate'}>
+					<Timeline>
 						<TimelineItem>
 							<TimelineOppositeContent sx={{ m: 'auto 0' }} variant="body2" color="text.secondary">
 								04-2021 to Present
@@ -82,6 +63,30 @@ const TimelineWork: FC<any> = () => {
 								<Typography variant="body2" color={colors.red}>
 									Software Engineer
 								</Typography>
+								<Typography variant="subtitle2" color="dimgrey">
+									<ul>
+										<li>
+											Changed the company&apos;s website from CMS to ReactJS. Knowledge of planning,
+											design database design, website, API, and Cloud Server
+										</li>
+										<li>
+											Strong understanding of ReactJS. Experience of using React Native, Next.js,
+											Redux, Responsive website will be a considerable bonus.
+										</li>
+										<li>Ability to manage backend using ExpressJS.</li>
+										<li>Basic understanding of API security.</li>
+										<li>Knowledge of NoSQL (Redis, MongoDB, Firebase, Firestore) and SQL.</li>
+										<li>Good understanding of SEO principles.</li>
+										<li>Familiar with deadline, communicate with other teams.</li>
+										<li>
+											Good understanding of software development approach using Agile methodology.
+										</li>
+										<li>
+											Ability to share knowledge with less experienced developers and bringing the
+											experience to make good decisions.
+										</li>
+									</ul>
+								</Typography>
 								<div className="mt-1">
 									<Chip className="tag-work mr-1 mb-1" label="HTML" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="CSS" size="small" />
@@ -112,6 +117,18 @@ const TimelineWork: FC<any> = () => {
 								<Typography component="span">Kratos</Typography>
 								<Typography variant="body2" color={colors.red}>
 									Programmer
+								</Typography>
+								<Typography variant="subtitle2" color="dimgrey">
+									<ul>
+										<li>
+											Develop a website on basis of business needs and requirements. develop by PHP,
+											React connect an API.
+										</li>
+										<li>
+											Design, develop a real-time website with firebase, and display on live stream
+											system.
+										</li>
+									</ul>
 								</Typography>
 								<div className="mt-1">
 									<Chip className="tag-work mr-1 mb-1" label="HTML" size="small" />
