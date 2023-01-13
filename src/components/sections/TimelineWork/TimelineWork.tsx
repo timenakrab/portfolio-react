@@ -36,6 +36,16 @@ const TimelineWork: FC<any> = () => {
 								<Typography variant="body2" color={colors.red}>
 									Frontend Developer
 								</Typography>
+								<Typography variant="caption" color="dimgrey">
+									<ul>
+										<li>Developed a dashboard website that manages data of underwater robots</li>
+										<li>Developed a website that handles video overlay for livestream</li>
+										<li>
+											Developed a website for viewing real-time (livestream) data from underwater
+											robots
+										</li>
+									</ul>
+								</Typography>
 								<div className="mt-1">
 									<Chip className="tag-work mr-1 mb-1" label="HTML" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="CSS" size="small" />
