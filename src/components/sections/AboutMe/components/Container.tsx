@@ -71,6 +71,7 @@ const Container = styled.div`
 			padding-right: 24px;
 			& .download {
 				text-align: center;
+				margin-bottom: 24px;
 			}
 		}
 	}
