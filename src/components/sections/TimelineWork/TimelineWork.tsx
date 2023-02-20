@@ -54,6 +54,8 @@ const TimelineWork: FC<any> = () => {
 									<Chip className="tag-work mr-1 mb-1" label="ReactJS" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="RecoilJS" size="small" />
 									<Chip className="tag-work mr-1 mb-1" label="NodeJS" size="small" />
+									<Chip className="tag-work mr-1 mb-1" label="Docker" size="small" />
+									<Chip className="tag-work mr-1 mb-1" label="Docker-compose" size="small" />
 								</div>
 							</TimelineContent>
 						</TimelineItem>
