@@ -1,16 +1,16 @@
 import { FC } from 'react';
 
 interface ICircleGradient {
+	isRotate?: boolean;
 	startColor?: string;
 	stopColor?: string;
-	speed?: number;
 	width?: number;
 	height?: number;
 }
 const CircleGradient: FC<ICircleGradient> = ({
+	isRotate,
 	startColor = '#ff1493',
 	stopColor = '#800080',
-	speed = 0,
 	width = 512,
 	height = 512,
 }) => {
@@ -36,15 +36,17 @@ const CircleGradient: FC<ICircleGradient> = ({
 				fill="url(#myGradient)"
 				d="M197.009 0C88.378 0 0 88.378 0 197.01s88.378 197.01 197.009 197.01 197.01-88.378 197.01-197.01S305.641 0 197.009 0zm0 379.02C96.649 379.02 15 297.37 15 197.01S96.649 15 197.009 15c100.361 0 182.01 81.649 182.01 182.01s-81.649 182.01-182.01 182.01z"
 			>
-				<animateTransform
-					attributeName="transform"
-					attributeType="xml"
-					dur={`${speed}s`}
-					from="0 197.01 197.01"
-					repeatCount="indefinite"
-					to="360 197.01 197.01"
-					type="rotate"
-				></animateTransform>
+				{isRotate && (
+					<animateTransform
+						attributeName="transform"
+						attributeType="xml"
+						dur="1s"
+						from="0 197.01 197.01"
+						repeatCount="indefinite"
+						to="360 197.01 197.01"
+						type="rotate"
+					></animateTransform>
+				)}
 			</path>
 		</svg>
 	);

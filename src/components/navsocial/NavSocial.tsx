@@ -11,6 +11,7 @@ const Navbar = styled.nav`
 const RootNavbar = styled.div`
 	display: flex;
 	align-items: center;
+	justify-content: center;
 `;
 
 const NavSocial: FC = () => {

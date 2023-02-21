@@ -1,22 +1,50 @@
 import CircleGradient from 'assets/svg/CircleGradient';
 import AvatarImg from 'assets/images/avatar.jpg';
 import { FC, useCallback, useState } from 'react';
-import { Avatar, ProfileContainer, ProfileData, WarpAvatar } from './Profile.styled';
+import {
+	AboutMe,
+	Avatar,
+	ButtonFollow,
+	ProfileContainer,
+	ProfileData,
+	ProfileName,
+	WarpAvatar,
+	WarpProfileName,
+} from './Profile.styled';
+import { WorkExpInProfile } from '../WorkExp';
 
 const Profile: FC = () => {
-	const [speed, setSpeed] = useState<number>(0);
+	const [isRotate, setIsRotate] = useState<boolean>(false);
 
 	const handleClickAvatar = useCallback(() => {
-		setSpeed(1);
-	}, []);
+		setIsRotate(!isRotate);
+	}, [isRotate]);
 
 	return (
 		<ProfileContainer>
 			<WarpAvatar>
-				<CircleGradient width={150} height={150} speed={speed} />
+				<CircleGradient isRotate={isRotate} width={150} height={150} />
 				<Avatar src={AvatarImg} alt="avatar" onClick={handleClickAvatar} />
 			</WarpAvatar>
-			<ProfileData />
+			<ProfileData>
+				<WarpProfileName>
+					<ProfileName>WatcharaH</ProfileName>
+					<ButtonFollow
+						variant="contained"
+						size="small"
+						href="https://www.linkedin.com/in/watchara-hongkim"
+					>
+						Follow
+					</ButtonFollow>
+				</WarpProfileName>
+				<WorkExpInProfile years={7} companies={3} />
+				<AboutMe>
+					I am frontend developer, and I am passionate and dedicated to my work. With 6 years
+					experience as a web developer, I have acquired the skills and knowledge necessary to make
+					your project a success. I enjoy every step of the design process, from discussion and
+					collaboration.
+				</AboutMe>
+			</ProfileData>
 		</ProfileContainer>
 	);
 };
