@@ -25,7 +25,7 @@ export const WorkExp2 = styled.ul`
 	flex-direction: row;
 	list-style-type: none;
 	margin: 0;
-	padding: 16px 0px;
+	padding: 8px 0px;
 
 	& li {
 		width: 50%;
@@ -33,6 +33,7 @@ export const WorkExp2 = styled.ul`
 		flex-direction: column;
 		align-items: center;
 		& span.value {
+			font-size: 14px;
 			font-weight: 500;
 			margin-right: 4px;
 		}

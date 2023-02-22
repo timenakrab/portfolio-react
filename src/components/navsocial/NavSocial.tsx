@@ -7,6 +7,8 @@ const Navbar = styled.nav`
 	width: 100vw;
 	height: 60px;
 	border-bottom: 1px solid rgb(219, 219, 219);
+	background-color: #ffffff;
+	z-index: 9999;
 `;
 const RootNavbar = styled.div`
 	display: flex;

@@ -1,8 +1,7 @@
 import { Divider } from '@mui/material';
 import NavSocial from 'components/navsocial';
 import { FC, Fragment } from 'react';
-import Profile from './components/Profile';
-import { WorkExpOutProfile } from './components/WorkExp';
+import { Content, Profile, WorkExpOutProfile } from './components';
 
 const Social: FC = () => {
 	return (
@@ -12,6 +11,7 @@ const Social: FC = () => {
 				<Profile />
 				<Divider />
 				<WorkExpOutProfile years={7} companies={3} />
+				<Content />
 			</div>
 		</Fragment>
 	);
