@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 const PorfolioPage = lazy(
 	() => import(/* webpackChunkName: "watcharah-portfolio-page" */ 'page/portfolio'),
@@ -19,17 +20,19 @@ const NotFoundPage = lazy(
 
 const App = () => {
 	return (
-		<BrowserRouter>
-			<Suspense>
-				<Switch>
-					<Route path="/" component={CompanyPage} exact />
-					<Route path="/education" component={EducationPage} exact />
-					<Route path="/social" component={SocialPage} exact />
-					<Route path="/porfolio" component={PorfolioPage} exact />
-					<Route path="*" component={NotFoundPage} />
-				</Switch>
-			</Suspense>
-		</BrowserRouter>
+		<RecoilRoot>
+			<BrowserRouter>
+				<Suspense>
+					<Switch>
+						<Route path="/" component={CompanyPage} exact />
+						<Route path="/education" component={EducationPage} exact />
+						<Route path="/social" component={SocialPage} exact />
+						<Route path="/portfolio" component={PorfolioPage} exact />
+						<Route path="*" component={NotFoundPage} />
+					</Switch>
+				</Suspense>
+			</BrowserRouter>
+		</RecoilRoot>
 	);
 };
 

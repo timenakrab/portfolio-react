@@ -38,6 +38,8 @@ export const Avatar = styled.img`
 	border-radius: 50%;
 	padding: 10px;
 	cursor: pointer;
+	object-fit: cover;
+	object-position: center center;
 
 	@media screen and (max-width: 767px) {
 		width: 70px;

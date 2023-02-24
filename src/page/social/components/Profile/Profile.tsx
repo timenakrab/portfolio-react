@@ -1,5 +1,5 @@
 import CircleGradient from 'assets/svg/CircleGradient';
-import AvatarImg from 'assets/images/avatar.jpg';
+import AvatarImg from 'assets/images/aboutme.webp';
 import { FC, Fragment, useCallback, useEffect, useState } from 'react';
 import {
 	Avatar,
@@ -12,6 +12,9 @@ import {
 } from './Profile.styled';
 import { WorkExpInProfile } from '../WorkExp';
 import AboutMe from '../AboutMe';
+import sleep from 'utils/sleep';
+import { useSetRecoilState } from 'recoil';
+import { modalImageState } from 'globalState/atoms/modal.atom';
 
 const Profile: FC = () => {
 	const [isRotate, setIsRotate] = useState<boolean>(false);
@@ -19,15 +22,25 @@ const Profile: FC = () => {
 		width: window.innerWidth,
 		height: window.innerHeight,
 	});
+	const setModalImage = useSetRecoilState(modalImageState);
 
 	const desc = `I am frontend developer, and I am passionate and dedicated to my work. With 7 years
 	experience as a web developer, I have acquired the skills and knowledge necessary to
 	make your project a success. I enjoy every step of the design process, from discussion
 	and collaboration.`;
 
-	const handleClickAvatar = useCallback(() => {
-		setIsRotate(!isRotate);
-	}, [isRotate]);
+	const handleClickAvatar = useCallback(
+		async (source: string) => {
+			setIsRotate(true);
+			await sleep(2000);
+			setIsRotate(false);
+			setModalImage({
+				visible: true,
+				source: source,
+			});
+		},
+		[setModalImage],
+	);
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -49,7 +62,7 @@ const Profile: FC = () => {
 			<ProfileContainer>
 				<WarpAvatar>
 					<CircleGradient isRotate={isRotate} width={150} height={150} />
-					<Avatar src={AvatarImg} alt="avatar" onClick={handleClickAvatar} />
+					<Avatar src={AvatarImg} alt="avatar" onClick={() => handleClickAvatar(AvatarImg)} />
 				</WarpAvatar>
 				<ProfileData>
 					<WarpProfileName>
