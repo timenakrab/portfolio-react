@@ -15,6 +15,10 @@ export const ImageModal = styled.img`
 	object-fit: cover;
 	max-width: 100%;
 	max-height: 100%;
+
+	@media screen and (min-width: 1025px) {
+		object-fit: contain;
+	}
 `;
 
 export const ImageModalContainer = styled.div`
@@ -24,4 +28,9 @@ export const ImageModalContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media screen and (min-width: 1025px) {
+		padding: 60px;
+		box-sizing: border-box;
+	}
 `;
