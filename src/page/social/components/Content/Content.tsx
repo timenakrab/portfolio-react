@@ -2,6 +2,7 @@ import { mdiLaptop, mdiShareVariantOutline, mdiSchoolOutline } from '@mdi/js';
 import Icon from '@mdi/react';
 import { FC, useCallback, useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router';
+import { ContentCompany, ContentEducation, ContentSocial } from './components';
 import { ButtonMenu, TabsMenu, WarpTabsMenu } from './Content.styled';
 
 type TabsProps = 'company' | 'education' | 'social' | '';
@@ -63,6 +64,9 @@ const Content: FC = () => {
 					</TabsMenu>
 				))}
 			</WarpTabsMenu>
+			{tabs === 'company' ? <ContentCompany /> : null}
+			{tabs === 'education' ? <ContentEducation /> : null}
+			{tabs === 'social' ? <ContentSocial /> : null}
 		</div>
 	);
 };
