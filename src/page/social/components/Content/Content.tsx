@@ -33,7 +33,7 @@ const inactive = '#848484';
 const Content: FC = () => {
 	const location = useLocation();
 	const history = useHistory();
-	const [tabs, setTabs] = useState<TabsProps>('company');
+	const [tabs, setTabs] = useState<TabsProps>('');
 
 	useEffect(() => {
 		if (location.pathname === '/education') {

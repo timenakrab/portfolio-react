@@ -3,7 +3,7 @@ import colors from 'constant/colors';
 import { FC } from 'react';
 
 const ContentCompany: FC = () => {
-	const compaies = [
+	const companies = [
 		{
 			name: 'Rovula',
 			position: 'Frontend Developer',
@@ -72,7 +72,7 @@ const ContentCompany: FC = () => {
 
 	return (
 		<div>
-			{compaies.map((company, index1) => (
+			{companies.map((company, index1) => (
 				<div className="mb-2" key={company.name}>
 					<Typography component="span">{company.name}</Typography>
 					<Typography variant="body2" color={colors.red}>
