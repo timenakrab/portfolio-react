@@ -10,6 +10,11 @@ export const Content = styled.div`
 
 export const ButtonSocial = styled(IconButton)`
 	margin: 8px !important;
+
+	@media screen and (max-width: 425px) {
+		width: 48px !important;
+		height: 48px !important;
+	}
 `;
 export const SocialIcon = styled(Icon)`
 	padding: 4px;
