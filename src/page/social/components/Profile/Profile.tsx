@@ -9,6 +9,7 @@ import {
 	ProfileName,
 	WarpAvatar,
 	WarpProfileName,
+	WrapperButtonFollow,
 } from './Profile.styled';
 import { WorkExpInProfile } from '../WorkExp';
 import AboutMe from '../AboutMe';
@@ -67,18 +68,39 @@ const Profile: FC = () => {
 				<ProfileData>
 					<WarpProfileName>
 						<ProfileName>WatcharaH</ProfileName>
-						<ButtonFollow
-							variant="contained"
-							size="small"
-							href="https://www.linkedin.com/in/watchara-hongkim"
-						>
-							Follow
-						</ButtonFollow>
+						<WrapperButtonFollow>
+							<ButtonFollow
+								className="mr-1"
+								variant="contained"
+								size="small"
+								href="https://www.linkedin.com/in/watchara-hongkim"
+							>
+								Follow
+							</ButtonFollow>
+							<ButtonFollow
+								className="ml-1"
+								variant="contained"
+								size="small"
+								href="/files/cv_watcharah.pdf"
+							>
+								Download
+							</ButtonFollow>
+						</WrapperButtonFollow>
 					</WarpProfileName>
 					<WorkExpInProfile years={7} companies={3} />
+					{windowDimensions.width > 425 ? (
+						<AboutMe style={{ fontWeight: '500' }}>Watchara Hongkim</AboutMe>
+					) : (
+						<Fragment />
+					)}
 					{windowDimensions.width > 425 ? <AboutMe>{desc}</AboutMe> : <Fragment />}
 				</ProfileData>
 			</ProfileContainer>
+			{windowDimensions.width <= 425 ? (
+				<AboutMe style={{ fontWeight: '500' }}>Watchara Hongkim</AboutMe>
+			) : (
+				<Fragment />
+			)}
 			{windowDimensions.width <= 425 ? (
 				<AboutMe style={{ marginBottom: 16 }}>{desc}</AboutMe>
 			) : (

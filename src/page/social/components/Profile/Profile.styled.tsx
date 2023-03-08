@@ -72,9 +72,17 @@ export const ProfileName = styled.h2`
 		margin-right: 0px;
 	}
 `;
+export const WrapperButtonFollow = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
 export const ButtonFollow = styled(Button)`
 	color: #000000 !important;
 	border-radius: 8px !important;
 	background-color: rgb(239, 239, 239) !important;
 	box-shadow: none !important;
+
+	@media screen and (max-width: 425px) {
+		width: 50%;
+	}
 `;
